@@ -4,6 +4,14 @@ python version codes of Optimal anticipatory control as a theory of motor prepar
 
 baed on  [original version](https://github.com/hennequin-lab/optimal-preparation) with some changes and deletions
 
+## update!
+There is a problem in output_lqr, where the cost value turn to negative
+
+method 1: gradient_output_lqr, Adam in numpy
+method 2: minimize_output_lqr, scipy.optimize.minimize (very slow with large cost)
+
+
+
 ## Construct target reaches and ISN network
 1.soc_construct: same setting as the original
 
