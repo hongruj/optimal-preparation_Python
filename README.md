@@ -6,7 +6,7 @@ baed on  [original version](https://github.com/hennequin-lab/optimal-preparation
 
 ##  integration dynamics 
 
-minimize_output_lqr, scipy.optimize.minimize for 
+minimize_output_lqr, scipy.optimize.minimize for K 
 
 
 
