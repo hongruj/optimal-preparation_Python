@@ -9,7 +9,7 @@ class Dynamics(Main):
         self.sample_every = round(self.sampling_dt / self.dt)
         
 
-    def run(self, t_max, xstars, spontaneous, layers=None, grad = False):
+    def run(self, t_max, xstars, spontaneous, grad = False, layers=None):
         if grad:           
             import torch
             W = torch.Tensor(self.w_rec)
@@ -35,16 +35,10 @@ class Dynamics(Main):
             if layers:
                 (tau_z, xz, z), (tau_y, zy, y) = layers
                 input_sum = input_sum + xz @ nl(z)
+                y = (1 - self.dt / tau_y) * y
+                z = (1 - self.dt / tau_z) * z + self.dt / tau_z * torch.mm(zy, nl(y)) 
 
             x = x + (self.dt/self.tau) * input_sum
-
-            if layers:
-                (tau_z, xz, z), (tau_y, zy, y) = layers
-                y = (1 - self.dt / tau_y) * y
-                z = (1 - self.dt / tau_z) * z + self.dt / tau_z * np.matmul(zy, y)
-                layers = ((tau_z, xz, z), (tau_y, zy, y))
-            else:
-                layers = None
 
             t += 1
 

@@ -11,7 +11,7 @@ class Base:
         self.r2_vanilla = 0.1
         self.r2_instant = 0.1
         self.r2_dynamic = 0.01
-        self.taus = 10e-3
+        self.taus = 10e-3, 10e-3
         self.mov_input = self.alpha_bump(50, 500, 5)
         
     def alpha_bump(self, tau_rise, tau_decay, amplitude):

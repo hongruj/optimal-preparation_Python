@@ -38,11 +38,11 @@ def plot_energy(evals):
 def set_figure(cond):
     figsize=(20,10)
     ylim = 50
-    if cond>3:
+    if cond>4:
         fig, axes = plt.subplots(2,cond//2, figsize=figsize, sharey=True)
         axes = axes.flatten()
-        axes[3].set_ylabel("firing rate [a.u.]")
-        axes[3].set_yticks(np.arange(0,ylim+1,10))
+        axes[4].set_ylabel("firing rate [a.u.]")
+        axes[4].set_yticks(np.arange(0,ylim+1,10))
     else:
         fig, axes = plt.subplots(1,cond, figsize=figsize, sharey=True)
     axes[0].set_ylabel("firing rate [a.u.]")
@@ -50,7 +50,7 @@ def set_figure(cond):
     return axes
 
 def plot_fr_per_cond(axes, k, T, r, xstars, test=False):
-    ylim = 50
+    ylim = 60
     axes[k].set_ylim(0, ylim)
     axes[k].set_xlabel("t [s]")
     axes[k].set_xticks(np.arange(0, T+.1, 0.2))
@@ -65,8 +65,8 @@ def plot_fr_per_cond(axes, k, T, r, xstars, test=False):
             
 def plot_out(out):
     figsize=(10,4.5)
-    fig, axes = plt.subplots(2,3, figsize=figsize, sharey=True)
+    fig, axes = plt.subplots(2,4, figsize=figsize, sharey=True)
     axes = axes.ravel()
-    for j in range(6):        
+    for j in range(8):        
         axes[j].plot(out[j,0,:])
         axes[j].plot(out[j,1,:])       
