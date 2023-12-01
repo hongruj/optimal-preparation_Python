@@ -2,13 +2,9 @@
 
 python version codes of Optimal anticipatory control as a theory of motor preparation: a thalamo-cortical circuit model
 
-baed on  [original version](https://github.com/hennequin-lab/optimal-preparation) with some changes and deletions
+baed on  [original version](https://github.com/hennequin-lab/optimal-preparation) 
 
-##  integration dynamics 
-
-minimize_output_lqr, scipy.optimize.minimize for K 
-
-
+Please install __pytorch__ for optimization
 
 ## Construct target reaches and ISN network
 1.soc_construct: same setting as the original
@@ -18,8 +14,11 @@ minimize_output_lqr, scipy.optimize.minimize for K
 in Pytorch 
 
 ## Move-phase simulation
-3.1move_phase(2014 eigenvectors): use top 6 eigenvectors as initial states   
-3.2move_phase(xstars): optimized initial states from setup 
+3.dynamics_autodiff
 
 ## Feedback preparatory control
-4.vanilla: classical LQR preparation (with many changes in lib)
+4.vanilla: classical LQR preparation (ignore the noisy trial)
+
+## Full thalamo-cortical loop + preparation strategy
+5.1setup_dynamics
+5.2dynamics
