@@ -17,6 +17,5 @@ in Pytorch
 3.vanilla: classical LQR preparation (ignore the noisy trial)
 
 ## Full thalamo-cortical loop + preparation strategy
-4.1setup_dynamics
-
+4.1setup_dynamics      
 4.2dynamics
