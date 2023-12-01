@@ -4,7 +4,7 @@ python version codes of Optimal anticipatory control as a theory of motor prepar
 
 baed on  [original version](https://github.com/hennequin-lab/optimal-preparation) 
 
-Please install __pytorch__ for optimization
+Please install __PyTorch__ for optimization
 
 ## Construct target reaches and ISN network
 1.soc_construct: same setting as the original
@@ -18,4 +18,5 @@ in Pytorch
 
 ## Full thalamo-cortical loop + preparation strategy
 4.1setup_dynamics
+
 4.2dynamics
