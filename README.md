@@ -13,12 +13,9 @@ Please install __pytorch__ for optimization
 2.setup: use velocity as output for the moment
 in Pytorch 
 
-## Move-phase simulation
-3.dynamics_autodiff
-
-## Feedback preparatory control
-4.vanilla: classical LQR preparation (ignore the noisy trial)
+## Feedback preparatory control (instantaneous)
+3.vanilla: classical LQR preparation (ignore the noisy trial)
 
 ## Full thalamo-cortical loop + preparation strategy
-5.1setup_dynamics
-5.2dynamics
+4.1setup_dynamics
+4.2dynamics
