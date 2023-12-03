@@ -22,6 +22,8 @@ class Dynamics(Main):
         accu = []
         t = 0
         x = xstars
+        if layers:
+            (tau_z, xz, z), (tau_y, zy, y) = layers
         
         while t < (t_max/self.dt):
             time = self.dt * t         
@@ -33,11 +35,10 @@ class Dynamics(Main):
             input_sum = self.mov_input(time) + h + W @ r - x
             
             if layers:
-                (tau_z, xz, z), (tau_y, zy, y) = layers
                 input_sum = input_sum + xz @ nl(z)
                 y = (1 - self.dt / tau_y) * y
                 z = (1 - self.dt / tau_z) * z + self.dt / tau_z * torch.mm(zy, nl(y)) 
-
+#                 print(y)
             x = x + (self.dt/self.tau) * input_sum
 
             t += 1
