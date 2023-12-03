@@ -1,8 +1,8 @@
 # optimal-preparation_Python
 
-python version codes of Optimal anticipatory control as a theory of motor preparation: a thalamo-cortical circuit model
+Python version codes of ["Optimal anticipatory control as a theory of motor preparation: a thalamo-cortical circuit model"](https://doi.org/10.1016/j.neuron.2021.03.009).
 
-baed on  [original version](https://github.com/hennequin-lab/optimal-preparation) 
+Baed on [original version](https://github.com/hennequin-lab/optimal-preparation) 
 
 Please install __PyTorch__ for optimization
 
