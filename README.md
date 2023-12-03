@@ -19,5 +19,5 @@ Please install __PyTorch__ for optimization
 3.vanilla: classical LQR preparation (ignore the noisy trials)
 
 ## Full thalamo-cortical loop + preparation strategy
-4.1.setup_dynamics      
+4.1.setup_dynamics: in Pytorch       
 4.2.dynamics
