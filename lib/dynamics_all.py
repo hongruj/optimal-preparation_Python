@@ -83,8 +83,8 @@ class D(Main):
         yaccu = []
         zaccu = []
         
-        y = np.zeros((yx.shape[0]))
-        z = np.zeros((zy.shape[0]))   
+        y = np.zeros((yx.shape[0], xstars.shape[1]))
+        z = np.zeros((zy.shape[0], xstars.shape[1]))   
         x = np.repeat(spontaneous, xstars.shape[1], axis=1)
         
         t = 0
@@ -95,9 +95,9 @@ class D(Main):
             rz = nl(z)
             
             if t % self.sample_every == 0:
-                xaccu.append(xr)
-                yaccu.append(yr)
-                yaccu.append(yr)
+                xaccu.append(rx)
+                yaccu.append(ry)
+                zaccu.append(rz)
                 
                 
             if t < self.off1:
@@ -124,7 +124,7 @@ class D(Main):
             x = (1.0 - (self.dt / self.tau)) * x + (self.dt / self.tau) * input_
             z = (1 - self.dt / tau_z) * z + (self.dt / tau_z) * zy @ ry
             if self.off1 <= t < self.off1+self.on:    
-                y = (1 - self.dt / tau_y) * y + (loop_gain(time) * self.dt / tau_y) * (yx @ rx)
+                y = (1 - self.dt / tau_y) * y + (self.dt / tau_y) * (yx @ rx)
             else:
                 y = (1 - self.dt / tau_y) * y 
             
